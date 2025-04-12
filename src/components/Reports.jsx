@@ -12,20 +12,20 @@ const Reports = () => {
 
   // Eğitim verileri
   const educationData = {
-    'Satış Teknikleri': [
-      { name: 'Müşteri İlişkileri Yönetimi', averageScore: 18 },
-      { name: 'Satış Kapama Teknikleri', averageScore: 15 },
-      { name: 'İkna Yöntemleri', averageScore: 17 }
+    'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE': [
+      { name: 'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır', averageScore: 4.1 },
+      { name: 'Müşterinin tercih sebeplerini analiz ederek deneyimi bu yönde şekillendirir', averageScore: 4.5 },
+      { name: 'Müşteri yolculuğunun her temas noktasında olumlu deneyim yaşatmayı hedefler', averageScore: 4.2 },
+      { name: 'Hizmet sunduğu kişiyi potansiyel marka elçisi olarak görüp bu yönde etki yaratır', averageScore: 3.7 },
+      { name: 'Müşteriyle bağ kurmak için onun duygularına ve beklentilerine empatiyle yaklaşır', averageScore: 2.9},
+
     ],
-    'İletişim Becerileri': [
-      { name: 'Etkili Konuşma', averageScore: 16 },
-      { name: 'Beden Dili', averageScore: 19 },
-      { name: 'Dinleme Teknikleri', averageScore: 14 }
-    ],
-    'Yönetim Becerileri': [
-      { name: 'Liderlik', averageScore: 20 },
-      { name: 'Takım Yönetimi', averageScore: 17 },
-      { name: 'Kriz Yönetimi', averageScore: 15 }
+    'AYAKKABI ÜRÜN EĞİTİMİ': [
+      { name: 'Ayakkabının üretim süreci ve aşamaları hakkında bilgi sahibidir', averageScore: 3 },
+      { name: 'Ayakkabının farklı bölümlerini ve bu bölümlerde kullanılan malzemelerin işlevlerini tanımlar', averageScore: 2.5 },
+      { name: 'Ürünle ilgili müşteri sorularını, teknik bilgiyle destekleyerek açık ve doğru şekilde yanıtlar', averageScore: 4 },
+      { name: 'Ayakkabıyla ilgili müşteri talep ve ihtiyaçlarını anlayarak uygun ürünü önermede etkili olur', averageScore: 3.2 },
+      { name: 'Uygulamalı çalışmalarda öğrendiklerini doğru ve güvenilir ürün bilgilendirmesi ile pekiştirir', averageScore: 4.8 }
     ]
   };
 
@@ -33,156 +33,219 @@ const Reports = () => {
   const personData = {
     'Ahmet Yılmaz': [
       {
-        educationName: 'Satış Teknikleri',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
         generalAverage: 3.8,
-        subTitle: 'Müşteri İlişkileri',
+        subTitle: 'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
         averageScore: 4,
         evaluation: 1
       },
       {
-        educationName: 'İletişim Becerileri',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
         generalAverage: 3.5,
-        subTitle: 'Etkili Konuşma',
+        subTitle: 'Müşterinin tercih sebeplerini analiz ederek deneyimi bu yönde şekillendirir',
         averageScore: 3,
         evaluation: 1
       },
       {
-        educationName: 'Yönetim Becerileri',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
         generalAverage: 3.9,
-        subTitle: 'Takım Liderliği',
+        subTitle: 'Müşteri yolculuğunun her temas noktasında olumlu deneyim yaşatmayı hedefler',
         averageScore: 4,
         evaluation: 1
       },
       {
-        educationName: 'Dijital Pazarlama',
-        generalAverage: 3.7,
-        subTitle: 'Sosyal Medya Yönetimi',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 4.7,
+        subTitle: 'Hizmet sunduğu kişiyi potansiyel marka elçisi olarak görüp bu yönde etki yaratır',
         averageScore: 3,
         evaluation: 1
       },
       {
-        educationName: 'Müşteri Deneyimi',
-        generalAverage: 4.1,
-        subTitle: 'Müşteri Memnuniyeti',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 4.2,
+        subTitle: 'Müşteriyle bağ kurmak için onun duygularına ve beklentilerine empatiyle yaklaşır',
         averageScore: 4,
         evaluation: 1
       },
       {
-        educationName: 'Proje Yönetimi',
-        generalAverage: 3.6,
-        subTitle: 'Agile Metodolojiler',
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3,
+        subTitle: 'Ayakkabının üretim süreci ve aşamaları hakkında bilgi sahibidir',
         averageScore: 3,
         evaluation: 1
       },
       {
-        educationName: 'Stres Yönetimi',
-        generalAverage: 3.9,
-        subTitle: 'İş-Yaşam Dengesi',
-        averageScore: 4,
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 4.6,
+        subTitle: '	Ayakkabının farklı bölümlerini ve bu bölümlerde kullanılan malzemelerin işlevlerini tanımlar',
+        averageScore: 3,
         evaluation: 1
-      }
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 2.6,
+        subTitle: 'Ürünle ilgili müşteri sorularını, teknik bilgiyle destekleyerek açık ve doğru şekilde yanıtlar',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3.4,
+        subTitle: 'Ayakkabıyla ilgili müşteri talep ve ihtiyaçlarını anlayarak uygun ürünü önermede etkili olur',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3.1,
+        subTitle: 'Uygulamalı çalışmalarda öğrendiklerini doğru ve güvenilir ürün bilgilendirmesi ile pekiştirir',
+        averageScore: 3,
+        evaluation: 1
+      },
     ],
     'Mehmet Demir': [
       {
-        educationName: 'Yönetim Becerileri',
-        generalAverage: 4.0,
-        subTitle: 'Liderlik',
-        averageScore: 5,
-        evaluation: 1
-      },
-      {
-        educationName: 'İletişim Becerileri',
-        generalAverage: 3.7,
-        subTitle: 'Beden Dili',
-        averageScore: 4,
-        evaluation: 1
-      },
-      {
-        educationName: 'Problem Çözme',
-        generalAverage: 4.2,
-        subTitle: 'Analitik Düşünme',
-        averageScore: 4,
-        evaluation: 1
-      },
-      {
-        educationName: 'Zaman Yönetimi',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
         generalAverage: 3.8,
-        subTitle: 'Önceliklendirme',
+        subTitle: 'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
         averageScore: 4,
         evaluation: 1
       },
       {
-        educationName: 'İnovasyon',
-        generalAverage: 4.1,
-        subTitle: 'Yaratıcı Düşünme',
-        averageScore: 4,
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 3.5,
+        subTitle: 'Müşterinin tercih sebeplerini analiz ederek deneyimi bu yönde şekillendirir',
+        averageScore: 3,
         evaluation: 1
       },
       {
-        educationName: 'Sunum Teknikleri',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
         generalAverage: 3.9,
-        subTitle: 'Etkili Sunum',
+        subTitle: 'Müşteri yolculuğunun her temas noktasında olumlu deneyim yaşatmayı hedefler',
         averageScore: 4,
         evaluation: 1
       },
       {
-        educationName: 'Ekip Yönetimi',
-        generalAverage: 4.0,
-        subTitle: 'Motivasyon Teknikleri',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 4.7,
+        subTitle: 'Hizmet sunduğu kişiyi potansiyel marka elçisi olarak görüp bu yönde etki yaratır',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 4.2,
+        subTitle: 'Müşteriyle bağ kurmak için onun duygularına ve beklentilerine empatiyle yaklaşır',
         averageScore: 4,
         evaluation: 1
-      }
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3,
+        subTitle: 'Ayakkabının üretim süreci ve aşamaları hakkında bilgi sahibidir',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 4.6,
+        subTitle: '	Ayakkabının farklı bölümlerini ve bu bölümlerde kullanılan malzemelerin işlevlerini tanımlar',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 2.6,
+        subTitle: 'Ürünle ilgili müşteri sorularını, teknik bilgiyle destekleyerek açık ve doğru şekilde yanıtlar',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3.4,
+        subTitle: 'Ayakkabıyla ilgili müşteri talep ve ihtiyaçlarını anlayarak uygun ürünü önermede etkili olur',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3.1,
+        subTitle: 'Uygulamalı çalışmalarda öğrendiklerini doğru ve güvenilir ürün bilgilendirmesi ile pekiştirir',
+        averageScore: 4,
+        evaluation: 1
+      },
     ],
     'Ayşe Kaya': [
       {
-        educationName: 'Satış Teknikleri',
-        generalAverage: 3.9,
-        subTitle: 'Satış Kapama',
-        averageScore: 4,
-        evaluation: 1
-      },
-      {
-        educationName: 'Yönetim Becerileri',
-        generalAverage: 3.6,
-        subTitle: 'Kriz Yönetimi',
-        averageScore: 3,
-        evaluation: 1
-      },
-      {
-        educationName: 'Müzakere Teknikleri',
-        generalAverage: 4.0,
-        subTitle: 'İkna Stratejileri',
-        averageScore: 4,
-        evaluation: 1
-      },
-      {
-        educationName: 'Finansal Okuryazarlık',
-        generalAverage: 3.7,
-        subTitle: 'Bütçe Yönetimi',
-        averageScore: 3,
-        evaluation: 1
-      },
-      {
-        educationName: 'Dijital Dönüşüm',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
         generalAverage: 3.8,
-        subTitle: 'Teknoloji Adaptasyonu',
-        averageScore: 4,
+        subTitle: 'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
+        averageScore: 2,
         evaluation: 1
       },
       {
-        educationName: 'Marka Yönetimi',
-        generalAverage: 4.1,
-        subTitle: 'Marka Stratejisi',
-        averageScore: 4,
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 3.5,
+        subTitle: 'Müşterinin tercih sebeplerini analiz ederek deneyimi bu yönde şekillendirir',
+        averageScore: 3,
         evaluation: 1
       },
       {
-        educationName: 'Veri Analizi',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
         generalAverage: 3.9,
-        subTitle: 'Raporlama Teknikleri',
+        subTitle: 'Müşteri yolculuğunun her temas noktasında olumlu deneyim yaşatmayı hedefler',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 4.7,
+        subTitle: 'Hizmet sunduğu kişiyi potansiyel marka elçisi olarak görüp bu yönde etki yaratır',
         averageScore: 4,
         evaluation: 1
-      }
+      },
+      {
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 4.2,
+        subTitle: 'Müşteriyle bağ kurmak için onun duygularına ve beklentilerine empatiyle yaklaşır',
+        averageScore: 4,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3,
+        subTitle: 'Ayakkabının üretim süreci ve aşamaları hakkında bilgi sahibidir',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 4.6,
+        subTitle: '	Ayakkabının farklı bölümlerini ve bu bölümlerde kullanılan malzemelerin işlevlerini tanımlar',
+        averageScore: 4,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 2.6,
+        subTitle: 'Ürünle ilgili müşteri sorularını, teknik bilgiyle destekleyerek açık ve doğru şekilde yanıtlar',
+        averageScore: 2,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3.4,
+        subTitle: 'Ayakkabıyla ilgili müşteri talep ve ihtiyaçlarını anlayarak uygun ürünü önermede etkili olur',
+        averageScore: 4,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3.1,
+        subTitle: 'Uygulamalı çalışmalarda öğrendiklerini doğru ve güvenilir ürün bilgilendirmesi ile pekiştirir',
+        averageScore: 3,
+        evaluation: 1
+      },
     ]
   };
 
@@ -190,156 +253,149 @@ const Reports = () => {
   const departmentData = {
     'Satış': [
       {
-        educationName: 'Satış Teknikleri',
-        generalAverage: 3.7,
-        subTitle: 'Müşteri İlişkileri',
-        averageScore: 4,
-        evaluation: 1
-      },
-      {
-        educationName: 'İletişim Becerileri',
-        generalAverage: 3.5,
-        subTitle: 'İkna Teknikleri',
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3,
+        subTitle: 'Ayakkabının üretim süreci ve aşamaları hakkında bilgi sahibidir',
         averageScore: 3,
         evaluation: 1
       },
       {
-        educationName: 'Müşteri Deneyimi',
-        generalAverage: 3.9,
-        subTitle: 'Müşteri Memnuniyeti',
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 4.6,
+        subTitle: '	Ayakkabının farklı bölümlerini ve bu bölümlerde kullanılan malzemelerin işlevlerini tanımlar',
         averageScore: 4,
         evaluation: 1
       },
       {
-        educationName: 'Dijital Satış',
-        generalAverage: 3.6,
-        subTitle: 'E-ticaret',
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 2.6,
+        subTitle: 'Ürünle ilgili müşteri sorularını, teknik bilgiyle destekleyerek açık ve doğru şekilde yanıtlar',
+        averageScore: 2,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3.4,
+        subTitle: 'Ayakkabıyla ilgili müşteri talep ve ihtiyaçlarını anlayarak uygun ürünü önermede etkili olur',
+        averageScore: 4,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3.1,
+        subTitle: 'Uygulamalı çalışmalarda öğrendiklerini doğru ve güvenilir ürün bilgilendirmesi ile pekiştirir',
         averageScore: 3,
         evaluation: 1
       },
-      {
-        educationName: 'Pazarlama Stratejileri',
-        generalAverage: 3.8,
-        subTitle: 'Pazar Analizi',
-        averageScore: 4,
-        evaluation: 1
-      },
-      {
-        educationName: 'Sosyal Medya Satışı',
-        generalAverage: 3.7,
-        subTitle: 'Online Pazarlama',
-        averageScore: 3,
-        evaluation: 1
-      },
-      {
-        educationName: 'Satış Sonrası Hizmetler',
-        generalAverage: 3.9,
-        subTitle: 'Müşteri Sadakati',
-        averageScore: 4,
-        evaluation: 1
-      }
     ],
     'İnsan Kaynakları': [
       {
-        educationName: 'Yönetim Becerileri',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
         generalAverage: 3.8,
-        subTitle: 'Takım Yönetimi',
-        averageScore: 4,
+        subTitle: 'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
+        averageScore: 2,
         evaluation: 1
       },
       {
-        educationName: 'İletişim Becerileri',
-        generalAverage: 3.6,
-        subTitle: 'Etkili İletişim',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 3.5,
+        subTitle: 'Müşterinin tercih sebeplerini analiz ederek deneyimi bu yönde şekillendirir',
         averageScore: 3,
         evaluation: 1
       },
       {
-        educationName: 'İşe Alım Teknikleri',
-        generalAverage: 4.0,
-        subTitle: 'Mülakat Yönetimi',
-        averageScore: 4,
-        evaluation: 1
-      },
-      {
-        educationName: 'Performans Yönetimi',
-        generalAverage: 3.7,
-        subTitle: 'Değerlendirme Sistemleri',
-        averageScore: 3,
-        evaluation: 1
-      },
-      {
-        educationName: 'Çalışan Bağlılığı',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
         generalAverage: 3.9,
-        subTitle: 'Motivasyon Yönetimi',
+        subTitle: 'Müşteri yolculuğunun her temas noktasında olumlu deneyim yaşatmayı hedefler',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 4.7,
+        subTitle: 'Hizmet sunduğu kişiyi potansiyel marka elçisi olarak görüp bu yönde etki yaratır',
         averageScore: 4,
         evaluation: 1
       },
       {
-        educationName: 'İş Hukuku',
-        generalAverage: 3.8,
-        subTitle: 'Yasal Düzenlemeler',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 4.2,
+        subTitle: 'Müşteriyle bağ kurmak için onun duygularına ve beklentilerine empatiyle yaklaşır',
         averageScore: 4,
         evaluation: 1
       },
-      {
-        educationName: 'Yetenek Yönetimi',
-        generalAverage: 4.1,
-        subTitle: 'Kariyer Planlama',
-        averageScore: 4,
-        evaluation: 1
-      }
     ],
     'Yönetim': [
       {
-        educationName: 'Liderlik Becerileri',
-        generalAverage: 4.0,
-        subTitle: 'Stratejik Yönetim',
-        averageScore: 5,
-        evaluation: 1
-      },
-      {
-        educationName: 'Kriz Yönetimi',
-        generalAverage: 3.7,
-        subTitle: 'Risk Analizi',
-        averageScore: 4,
-        evaluation: 1
-      },
-      {
-        educationName: 'Stratejik Planlama',
-        generalAverage: 4.1,
-        subTitle: 'Hedef Belirleme',
-        averageScore: 4,
-        evaluation: 1
-      },
-      {
-        educationName: 'İnovasyon Yönetimi',
-        generalAverage: 3.9,
-        subTitle: 'Değişim Yönetimi',
-        averageScore: 4,
-        evaluation: 1
-      },
-      {
-        educationName: 'Finansal Yönetim',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
         generalAverage: 3.8,
-        subTitle: 'Bütçe Planlama',
+        subTitle: 'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
+        averageScore: 2,
+        evaluation: 1
+      },
+      {
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 3.5,
+        subTitle: 'Müşterinin tercih sebeplerini analiz ederek deneyimi bu yönde şekillendirir',
         averageScore: 3,
         evaluation: 1
       },
       {
-        educationName: 'Proje Yönetimi',
-        generalAverage: 4.0,
-        subTitle: 'Kaynak Yönetimi',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 3.9,
+        subTitle: 'Müşteri yolculuğunun her temas noktasında olumlu deneyim yaşatmayı hedefler',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 4.7,
+        subTitle: 'Hizmet sunduğu kişiyi potansiyel marka elçisi olarak görüp bu yönde etki yaratır',
         averageScore: 4,
         evaluation: 1
       },
       {
-        educationName: 'Kurumsal Yönetişim',
-        generalAverage: 3.9,
-        subTitle: 'Sürdürülebilirlik',
+        educationName: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
+        generalAverage: 4.2,
+        subTitle: 'Müşteriyle bağ kurmak için onun duygularına ve beklentilerine empatiyle yaklaşır',
         averageScore: 4,
         evaluation: 1
-      }
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3,
+        subTitle: 'Ayakkabının üretim süreci ve aşamaları hakkında bilgi sahibidir',
+        averageScore: 3,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 4.6,
+        subTitle: '	Ayakkabının farklı bölümlerini ve bu bölümlerde kullanılan malzemelerin işlevlerini tanımlar',
+        averageScore: 4,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 2.6,
+        subTitle: 'Ürünle ilgili müşteri sorularını, teknik bilgiyle destekleyerek açık ve doğru şekilde yanıtlar',
+        averageScore: 2,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3.4,
+        subTitle: 'Ayakkabıyla ilgili müşteri talep ve ihtiyaçlarını anlayarak uygun ürünü önermede etkili olur',
+        averageScore: 4,
+        evaluation: 1
+      },
+      {
+        educationName: 'AYAKKABI ÜRÜN EĞİTİMİ',
+        generalAverage: 3.1,
+        subTitle: 'Uygulamalı çalışmalarda öğrendiklerini doğru ve güvenilir ürün bilgilendirmesi ile pekiştirir',
+        averageScore: 3,
+        evaluation: 1
+      },
     ]
   };
 
@@ -402,7 +458,7 @@ const Reports = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Eğitimin Adı</TableCell>
+                <TableCell>Eğitim Değerlendirme Soruları</TableCell>
                 <TableCell>Ortalama Performans Puanı</TableCell>
               </TableRow>
             </TableHead>
@@ -410,7 +466,7 @@ const Reports = () => {
               {selectedEducation.map((row, index) => (
                 <TableRow key={index}>
                   <TableCell>{row.name}</TableCell>
-                  <TableCell>{row.averageScore}</TableCell>
+                  <TableCell align="center">{row.averageScore}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -505,9 +561,9 @@ const Reports = () => {
   return (
     <div style={{ padding: '20px' }}>
       <Tabs value={tabValue} onChange={handleTabChange}>
-        <Tab label="Eğitim Adı" />
-        <Tab label="Kişi Adı" />
-        <Tab label="Departman Adı" />
+        <Tab label="Eğitim Eklilik analizi" />
+        <Tab label="Katılımcı Performans Analizi" />
+        <Tab label="Grup performans analizi" />
       </Tabs>
 
       <div style={{ margin: '20px 0' }}>

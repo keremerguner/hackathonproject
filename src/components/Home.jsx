@@ -27,11 +27,11 @@ const Home = () => {
 
   // Dummy sorular
   const dummyQuestions = [
-    'Müşteri ihtiyaçlarını doğru analiz edebiliyor mu?',
-    'Ürün bilgisine hakim mi?',
-    'İletişim becerileri yeterli mi?',
-    'Satış kapama teknikleri başarılı mı?',
-    'Müşteri takibi yapıyor mu?'
+    'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
+    'Müşterinin tercih sebeplerini analiz ederek deneyimi bu yönde şekillendirir',
+    'Müşteri yolculuğunun her temas noktasında olumlu deneyim yaşatmayı hedefler',
+    'Hizmet sunduğu kişiyi potansiyel marka elçisi olarak görüp bu yönde etki yaratır',
+    'Müşteriyle bağ kurmak için onun duygularına ve beklentilerine empatiyle yaklaşır'
   ];
 
   const handleTabChange = (tab) => {
@@ -128,24 +128,42 @@ const Home = () => {
           </div>
           <div className="form-group">
             <label htmlFor="egitimIcerigi">Eğitim İçeriği</label>
-            <input
+            <textarea
               id="egitimIcerigi"
-              type="text"
               name="egitimIcerigi"
               placeholder="Eğitimin içeriğini giriniz"
               value={formData.egitimIcerigi}
               onChange={handleInputChange}
+              rows={4}
+              style={{
+                width: '100%',
+                padding: '8px',
+                borderRadius: '4px',
+                border: '1px solid #ccc',
+                resize: 'vertical',
+                minHeight: '100px',
+                fontFamily: 'inherit'
+              }}
             />
           </div>
           <div className="form-group">
             <label htmlFor="egitimAmaci">Eğitim Amacı</label>
-            <input
+            <textarea
               id="egitimAmaci"
-              type="text"
               name="egitimAmaci"
               placeholder="Eğitimin amacını giriniz"
               value={formData.egitimAmaci}
               onChange={handleInputChange}
+              rows={4}
+              style={{
+                width: '100%',
+                padding: '8px',
+                borderRadius: '4px',
+                border: '1px solid #ccc',
+                resize: 'vertical',
+                minHeight: '100px',
+                fontFamily: 'inherit'
+              }}
             />
           </div>
           <div className="button-group">

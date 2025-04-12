@@ -7,15 +7,15 @@ const Egitimler = () => {
   const [egitimlerState, setEgitimlerState] = useState([
     {
       id: 1,
-      title: 'Müşteri Odaklılık Eğitimi',
+      title: 'MEMNUN MÜŞTERİDEN TARAFTAR MÜŞTERİYE',
       users: [
         {
           id: 1,
-          name: 'Emrullah Erdeve',
+          name: 'Furkan Aktürk',
           department: 'Satış Departmanı',
           image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCIgLz48L3N2Zz4=',
           sicilNo: '111111111111',
-          remainingDays: 2,
+          remainingDays: 20,
           evaluationDate: null,
           questions: [
             'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
@@ -27,11 +27,11 @@ const Egitimler = () => {
         },
         {
           id: 2,
-          name: 'Test Kullanıcı 1',
+          name: 'Ayşe Yılmaz',
           department: 'İnsan Kaynakları',
           image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCIgLz48L3N2Zz4=',
           sicilNo: '222222222222',
-          remainingDays: 3,
+          remainingDays: 20,
           evaluationDate: null,
           questions: [
             'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
@@ -43,11 +43,11 @@ const Egitimler = () => {
         },
         {
           id: 3,
-          name: 'Test Kullanıcı 2',
+          name: 'Mehmet Demir',
           department: 'Yönetim',
           image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCIgLz48L3N2Zz4=',
           sicilNo: '333333333333',
-          remainingDays: 2,
+          remainingDays: 20,
           evaluationDate: null,
           questions: [
             'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
@@ -171,7 +171,7 @@ const Egitimler = () => {
           </div>
           <div className="user-evaluation-container">
             <div className="user-evaluation-header">
-              <h4> Lütfen aşağıdaki alanlarda çalışmanın eğitim öncesi ve sonrası davranis değişimini 1 (hiç gozlemlemedim ) ile 5 ( çok net gözlemledim ) arasında degerlendirin</h4>
+              <h4> Lütfen aşağıdaki alanlarda çalışmanın eğitim öncesi ve sonrası davranis değişimini 1 (hiç gozlemlemedim ) ile 5 ( çok net gözlemledim ) arasında degerlendirin.</h4>
               <p> .</p>
             </div>
           </div>
