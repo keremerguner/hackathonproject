@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Tabs, Tab, Select, MenuItem, FormControl, InputLabel, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Tabs, Tab, Select, MenuItem, FormControl, InputLabel, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@mui/material';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import EditIcon from '@mui/icons-material/Edit';
 
 const Reports = () => {
   const [tabValue, setTabValue] = useState(0);
@@ -386,28 +388,51 @@ const Reports = () => {
     }
   };
 
+  const handleExportExcel = () => {
+    // Boş fonksiyon - ileride implement edilecek
+    console.log('Excel export clicked');
+  };
+
   const renderEducationTable = () => {
     const selectedEducation = educationData[searchTerm] || [];
     
     return (
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Eğitimin Adı</TableCell>
-              <TableCell>Ortalama Puan</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {selectedEducation.map((row, index) => (
-              <TableRow key={index}>
-                <TableCell>{row.name}</TableCell>
-                <TableCell>{row.averageScore}</TableCell>
+      <div style={{ position: 'relative', marginBottom: '60px' }}>
+        <TableContainer component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Eğitimin Adı</TableCell>
+                <TableCell>Ortalama Performans Puanı</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {selectedEducation.map((row, index) => (
+                <TableRow key={index}>
+                  <TableCell>{row.name}</TableCell>
+                  <TableCell>{row.averageScore}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        {searchTerm && selectedEducation.length > 0 && (
+          <Button
+            variant="contained"
+            color="primary"
+            startIcon={<FileDownloadIcon />}
+            onClick={handleExportExcel}
+            style={{
+              position: 'absolute',
+              bottom: '-50px',
+              right: '0',
+              backgroundColor: '#4CAF50'
+            }}
+          >
+            Excel'e Aktar
+          </Button>
+        )}
+      </div>
     );
   };
 
@@ -420,32 +445,50 @@ const Reports = () => {
     }
 
     return (
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Eğitim Adı</TableCell>
-              <TableCell>Genel Ortalama</TableCell>
-              <TableCell>Alt Başlık</TableCell>
-              <TableCell>Ortalama Puan</TableCell>
-              <TableCell align="center">Değerlendirme</TableCell>
+      <div style={{ position: 'relative', marginBottom: '60px' }}>
+        <TableContainer component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+             <TableCell>Eğitim Adı</TableCell>
+              <TableCell>Genel Performans Ortalama</TableCell>
+              <TableCell>Davranış Gözlemi</TableCell>
+              <TableCell>Ortalama Performans Puanı</TableCell>
+              <TableCell align="center">Performans Değerlendirme</TableCell>
             </TableRow>
-          </TableHead>
-          <TableBody>
-            {selectedData.map((row, index) => (
-              <TableRow key={index}>
-                <TableCell>{row.educationName}</TableCell>
-                <TableCell>{row.generalAverage}</TableCell>
-                <TableCell>{row.subTitle}</TableCell>
-                <TableCell>{row.averageScore}</TableCell>
-                <TableCell align="center">
-                  {getEvaluationIcon(row.averageScore, row.generalAverage)}
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {selectedData.map((row, index) => (
+                <TableRow key={index}>
+                  <TableCell>{row.educationName}</TableCell>
+                  <TableCell>{row.generalAverage}</TableCell>
+                  <TableCell>{row.subTitle}</TableCell>
+                  <TableCell>{row.averageScore}</TableCell>
+                  <TableCell align="center">
+                    {getEvaluationIcon(row.averageScore, row.generalAverage)}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        {searchTerm && selectedData.length > 0 && (
+          <Button
+            variant="contained"
+            color="primary"
+            startIcon={<FileDownloadIcon />}
+            onClick={handleExportExcel}
+            style={{
+              position: 'absolute',
+              bottom: '-50px',
+              right: '0',
+              backgroundColor: '#4CAF50'
+            }}
+          >
+            Excel'e Aktar
+          </Button>
+        )}
+      </div>
     );
   };
 

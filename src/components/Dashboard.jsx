@@ -34,9 +34,14 @@ const Dashboard = () => {
               </>
             )}
             {userRole === 'manager' && (
+              <>
               <li>
-                <NavLink to="/dashboard/egitimler" end>Eğitimler</NavLink>
+                <NavLink to="/dashboard/egitimler" end>Eğitim Sonrası Davranış Değerlendirme</NavLink>
               </li>
+                              <li>
+                              <NavLink to="/dashboard/reports">Raporlar</NavLink>
+                            </li>
+              </>
             )}
           </ul>
         </nav>

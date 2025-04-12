@@ -4,9 +4,7 @@ const Egitimler = () => {
   const [activeTab, setActiveTab] = useState('tumu');
   const [selectedUser, setSelectedUser] = useState(null);
   const [completedUsers, setCompletedUsers] = useState([]);
-
-  // Dummy veri
-  const egitimler = [
+  const [egitimlerState, setEgitimlerState] = useState([
     {
       id: 1,
       title: 'Müşteri Odaklılık Eğitimi',
@@ -14,9 +12,11 @@ const Egitimler = () => {
         {
           id: 1,
           name: 'Emrullah Erdeve',
+          department: 'Satış Departmanı',
           image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCIgLz48L3N2Zz4=',
           sicilNo: '111111111111',
           remainingDays: 2,
+          evaluationDate: null,
           questions: [
             'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
             'Müşterinin tercih sebeplerini analiz ederek deneyimi bu yönde şekillendirir',
@@ -28,9 +28,11 @@ const Egitimler = () => {
         {
           id: 2,
           name: 'Test Kullanıcı 1',
+          department: 'İnsan Kaynakları',
           image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCIgLz48L3N2Zz4=',
           sicilNo: '222222222222',
           remainingDays: 3,
+          evaluationDate: null,
           questions: [
             'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
             'Müşterinin tercih sebeplerini analiz ederek deneyimi bu yönde şekillendirir',
@@ -42,9 +44,11 @@ const Egitimler = () => {
         {
           id: 3,
           name: 'Test Kullanıcı 2',
+          department: 'Yönetim',
           image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCIgLz48L3N2Zz4=',
           sicilNo: '333333333333',
           remainingDays: 2,
+          evaluationDate: null,
           questions: [
             'Müşteriye beklediğinden fazlasını sunarak olumlu bir sürpriz yaratır',
             'Müşterinin tercih sebeplerini analiz ederek deneyimi bu yönde şekillendirir',
@@ -55,7 +59,7 @@ const Egitimler = () => {
         }
       ]
     }
-  ];
+  ]);
 
   const handleUserClick = (user) => {
     setSelectedUser(user);
@@ -64,6 +68,18 @@ const Egitimler = () => {
   const handleRatingSubmit = (e) => {
     e.preventDefault();
     if (selectedUser) {
+      const currentDate = new Date().toLocaleString('tr-TR');
+      const updatedUser = { ...selectedUser, evaluationDate: currentDate };
+      
+      // Eğitimler listesini güncelle
+      const updatedEgitimler = egitimlerState.map(egitim => ({
+        ...egitim,
+        users: egitim.users.map(user => 
+          user.id === selectedUser.id ? updatedUser : user
+        )
+      }));
+      
+      setEgitimlerState(updatedEgitimler);
       setCompletedUsers([...completedUsers, selectedUser.id]);
       setSelectedUser(null);
     }
@@ -106,7 +122,7 @@ const Egitimler = () => {
 
       {!selectedUser ? (
         <div className="egitimler-list">
-          {egitimler.map(egitim => (
+          {egitimlerState.map(egitim => (
             <div key={egitim.id} className="egitim-card">
               <h3>{egitim.title}</h3>
               <div className="users-grid">
@@ -145,10 +161,22 @@ const Egitimler = () => {
             <div className="user-details">
               <p>Adı Soyadı: {selectedUser.name}</p>
               <p>Sicil No: {selectedUser.sicilNo}</p>
+              <p>Departman: {selectedUser.department}</p>
               <p>Eğitim adı: Müşteri Odaklı eğitim</p>
               <p>Eğitim tarihi: 12.04.2024</p>
+              {selectedUser.evaluationDate && (
+                <p>Değerlendirme tarihi: {selectedUser.evaluationDate}</p>
+              )}
             </div>
           </div>
+          <div className="user-evaluation-container">
+            <div className="user-evaluation-header">
+              <h4> Lütfen aşağıdaki alanlarda çalışmanın eğitim öncesi ve sonrası davranis değişimini 1 (hiç gozlemlemedim ) ile 5 ( çok net gözlemledim ) arasında degerlendirin</h4>
+              <p> .</p>
+            </div>
+          </div>
+
+          
 
           <form onSubmit={handleRatingSubmit} className="evaluation-form">
             <table className="questions-table">
