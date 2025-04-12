@@ -81,6 +81,9 @@ const Dashboard = () => {
                 <li>
                   <NavLink to="/dashboard/reports">Raporlar</NavLink>
                 </li>
+                <li>
+                  <NavLink to="/dashboard/statistics">İstatistikler</NavLink>
+                </li>
               </>
             )}
             {userRole === 'manager' && (

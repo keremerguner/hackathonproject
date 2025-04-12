@@ -74,6 +74,11 @@ const Login = () => {
             />
           </div>
           <button type="submit">Giriş Yap</button>
+          <div style={{ textAlign: 'right', marginTop: '10px' }}>
+            <a href="#" style={{ color: '#666', textDecoration: 'none', fontSize: '14px' }}>
+              Şifreni mi unuttun?
+            </a>
+          </div>
         </form>
       </div>
     </div>

@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard';
 import Home from './components/Home';
 import Reports from './components/Reports';
 import Egitimler from './components/Egitimler';
+import Statistics from './components/Statistics';
 
 const PrivateRoute = ({ children, allowedRole }) => {
   const userRole = localStorage.getItem('userRole');
@@ -40,6 +41,11 @@ function App() {
           <Route path="egitimler" element={
             <PrivateRoute allowedRole="manager">
               <Egitimler />
+            </PrivateRoute>
+          } />
+          <Route path="statistics" element={
+            <PrivateRoute allowedRole="manager">
+              <Statistics />
             </PrivateRoute>
           } />
         </Route>
