@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import logo from '../assets/resim.jpeg';
+import './Login.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -46,29 +48,34 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <form onSubmit={handleSubmit} className="login-form">
-        <h2>Giriş Yap</h2>
-        <div className="form-group">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-          />
+    <div className="login-page">
+      <div className="login-box">
+        <div className="logo-container">
+          <img src={logo} alt="Logo" className="logo" />
         </div>
-        <div className="form-group">
-          <input
-            type="password"
-            name="password"
-            placeholder="Şifre"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit">Giriş Yap</button>
-      </form>
+        <form onSubmit={handleSubmit} className="login-form">
+          <h2>Giriş Yap</h2>
+          <div className="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              name="password"
+              placeholder="Şifre"
+              value={formData.password}
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit">Giriş Yap</button>
+        </form>
+      </div>
     </div>
   );
 };

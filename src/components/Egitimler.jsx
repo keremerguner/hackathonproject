@@ -13,7 +13,7 @@ const Egitimler = () => {
           id: 1,
           name: 'Furkan Aktürk',
           department: 'Satış Departmanı',
-          image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCIgLz48L3N2Zz4=',
+          image: 'https://randomuser.me/api/portraits/men/32.jpg',
           sicilNo: '111111111111',
           remainingDays: 20,
           evaluationDate: null,
@@ -29,7 +29,7 @@ const Egitimler = () => {
           id: 2,
           name: 'Ayşe Yılmaz',
           department: 'İnsan Kaynakları',
-          image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCIgLz48L3N2Zz4=',
+          image: 'https://randomuser.me/api/portraits/women/28.jpg',
           sicilNo: '222222222222',
           remainingDays: 20,
           evaluationDate: null,
@@ -45,7 +45,7 @@ const Egitimler = () => {
           id: 3,
           name: 'Mehmet Demir',
           department: 'Yönetim',
-          image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCIgLz48L3N2Zz4=',
+          image: 'https://randomuser.me/api/portraits/men/41.jpg',
           sicilNo: '333333333333',
           remainingDays: 20,
           evaluationDate: null,
@@ -110,7 +110,7 @@ const Egitimler = () => {
           className={activeTab === 'atananlar' ? 'active' : ''}
           onClick={() => setActiveTab('atananlar')}
         >
-          Atananlar
+          Devam edenler
         </button>
         <button
           className={activeTab === 'tamamlananlar' ? 'active' : ''}
