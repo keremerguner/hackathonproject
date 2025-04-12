@@ -1,7 +1,16 @@
 import { useState } from 'react';
+import { TextField, IconButton, Paper, RadioGroup, FormControlLabel, Radio, FormControl, FormLabel } from '@mui/material';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import EditIcon from '@mui/icons-material/Edit';
+import dayjs from 'dayjs';
+import 'dayjs/locale/tr';
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState('manuel');
+  const [selectedDuration, setSelectedDuration] = useState('');
+  const [selectedDate, setSelectedDate] = useState(null);
   const [formData, setFormData] = useState({
     egitimAdi: '',
     egitimIcerigi: '',
@@ -18,11 +27,11 @@ const Home = () => {
 
   // Dummy sorular
   const dummyQuestions = [
-    'Soru 1: Bu bir örnek sorudur?',
-    'Soru 2: İkinci örnek soru burada yer alıyor?',
-    'Soru 3: Üçüncü soru örneği?',
-    'Soru 4: Dördüncü soru örneği?',
-    'Soru 5: Son soru örneği?'
+    'Müşteri ihtiyaçlarını doğru analiz edebiliyor mu?',
+    'Ürün bilgisine hakim mi?',
+    'İletişim becerileri yeterli mi?',
+    'Satış kapama teknikleri başarılı mı?',
+    'Müşteri takibi yapıyor mu?'
   ];
 
   const handleTabChange = (tab) => {
@@ -43,7 +52,7 @@ const Home = () => {
   };
 
   const handleCreate = () => {
-    if (!formData.egitimAdi || !formData.egitimIcerigi || !formData.egitimAmaci) {
+    if (!formData.egitimAdi || !formData.egitimIcerigi || !formData.egitimAmaci || !selectedDate) {
       alert('Lütfen tüm alanları doldurun!');
       return;
     }
@@ -57,14 +66,20 @@ const Home = () => {
     }
   };
 
+  const handleDurationChange = (event) => {
+    setSelectedDuration(event.target.value);
+  };
+
   const handleSubmitToManager = () => {
-    alert('Sorular yöneticiye gönderildi!');
+    alert(`Sorular yöneticiye gönderildi! Seçilen süre: ${selectedDuration}, Eğitim Tarihi: ${selectedDate.format('DD/MM/YYYY')}`);
     setShowQuestions(false);
     setFormData({
       egitimAdi: '',
       egitimIcerigi: '',
       egitimAmaci: '',
     });
+    setSelectedDuration('');
+    setSelectedDate(null);
   };
 
   return (
@@ -93,6 +108,23 @@ const Home = () => {
               value={formData.egitimAdi}
               onChange={handleInputChange}
             />
+          </div>
+          <div className="form-group">
+            <label>Eğitim Tarihi</label>
+            <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="tr">
+              <DatePicker
+                value={selectedDate}
+                onChange={(newValue) => setSelectedDate(newValue)}
+                format="DD/MM/YYYY"
+                slotProps={{
+                  textField: {
+                    variant: "outlined",
+                    placeholder: "Tarih seçiniz",
+                    fullWidth: true,
+                  }
+                }}
+              />
+            </LocalizationProvider>
           </div>
           <div className="form-group">
             <label htmlFor="egitimIcerigi">Eğitim İçeriği</label>
@@ -133,16 +165,63 @@ const Home = () => {
           {showQuestions && (
             <div className="questions">
               <h3>Sorular</h3>
-              {dummyQuestions.map((question, index) => (
-                <div key={index} className="form-group">
-                  <input
-                    type="text"
-                    value={question}
-                    readOnly
-                  />
-                </div>
-              ))}
-              <button onClick={handleSubmitToManager} className="submit-button">
+              <Paper style={{ padding: '20px', margin: '20px' }}>
+                {dummyQuestions.map((question, index) => (
+                  <div 
+                    key={index} 
+                    style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      marginBottom: '15px',
+                      gap: '10px'
+                    }}
+                  >
+                    <TextField
+                      fullWidth
+                      label={`Soru ${index + 1}`}
+                      value={question}
+                      disabled
+                      variant="outlined"
+                    />
+                    <IconButton
+                      color="primary"
+                      style={{ cursor: 'not-allowed' }}
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      <EditIcon />
+                    </IconButton>
+                  </div>
+                ))}
+                
+                <FormControl component="fieldset" style={{ marginTop: '20px' }}>
+                  <FormLabel component="legend">Eğitim Süresi</FormLabel>
+                  <RadioGroup
+                    value={selectedDuration}
+                    onChange={handleDurationChange}
+                    style={{ marginTop: '10px' }}
+                  >
+                    <FormControlLabel 
+                      value="4-6" 
+                      control={<Radio />} 
+                      label="4-6 Hafta" 
+                    />
+                    <FormControlLabel 
+                      value="8-10" 
+                      control={<Radio />} 
+                      label="8-10 Hafta" 
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </Paper>
+              <button 
+                onClick={handleSubmitToManager} 
+                className="submit-button"
+                disabled={!selectedDuration}
+                style={{
+                  opacity: selectedDuration ? 1 : 0.5,
+                  cursor: selectedDuration ? 'pointer' : 'not-allowed'
+                }}
+              >
                 Soruları Yöneticiye Gönder
               </button>
             </div>
