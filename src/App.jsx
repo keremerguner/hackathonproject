@@ -3,6 +3,17 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
 import Reports from './components/Reports';
+import Egitimler from './components/Egitimler';
+
+const PrivateRoute = ({ children, allowedRole }) => {
+  const userRole = localStorage.getItem('userRole');
+  
+  if (!userRole) {
+    return <Navigate to="/login" />;
+  }
+
+  return children;
+};
 
 function App() {
   return (
@@ -10,9 +21,27 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route index element={<Home />} />
-          <Route path="reports" element={<Reports />} />
+        
+        <Route path="/dashboard" element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }>
+          <Route index element={
+            <PrivateRoute allowedRole="hr">
+              <Home />
+            </PrivateRoute>
+          } />
+          <Route path="reports" element={
+            <PrivateRoute allowedRole="hr">
+              <Reports />
+            </PrivateRoute>
+          } />
+          <Route path="egitimler" element={
+            <PrivateRoute allowedRole="manager">
+              <Egitimler />
+            </PrivateRoute>
+          } />
         </Route>
       </Routes>
     </Router>

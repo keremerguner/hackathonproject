@@ -9,15 +9,30 @@ const Login = () => {
   });
 
   // Dummy kullanıcı bilgileri
-  const dummyUser = {
-    email: 'test@test.com',
-    password: '123456'
+  const users = {
+    'ik@test.com': {
+      password: '123456',
+      role: 'hr'
+    },
+    'yonetici@test.com': {
+      password: '123456',
+      role: 'manager'
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.email === dummyUser.email && formData.password === dummyUser.password) {
-      navigate('/dashboard');
+    const user = users[formData.email];
+    
+    if (user && user.password === formData.password) {
+      localStorage.setItem('userRole', user.role);
+      localStorage.setItem('userEmail', formData.email);
+      
+      if (user.role === 'hr') {
+        navigate('/dashboard');
+      } else {
+        navigate('/dashboard/egitimler');
+      }
     } else {
       alert('Hatalı email veya şifre!');
     }
